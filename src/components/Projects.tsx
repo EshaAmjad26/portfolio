@@ -4,7 +4,16 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const data = [
+interface Project {
+    id: number;
+    title: string;
+    description: string;
+    link: string;
+    images: string[];
+    tags: string[];
+}
+
+const data: Project[] = [
     {
         id: 1,
         title: "AI Image Generator",
@@ -46,7 +55,7 @@ function Projects() {
     );
 }
 
-function ProjectCard({ project }) {
+function ProjectCard({ project }: { project: Project }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
 
@@ -100,7 +109,7 @@ function ProjectCard({ project }) {
                     Technologies Used
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                    {project.tags.map(tag => (
+                    {project.tags.map((tag: string) => (
                         <span 
                             key={tag} 
                             className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-400/10 to-purple-500/10 
