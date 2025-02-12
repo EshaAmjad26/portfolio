@@ -33,9 +33,11 @@ const data = [
 
 function Projects() {
     return (
-        <div id="projects" className="container mx-auto p-4">
-            <h1 className="text-4xl flex items-center justify-center font-bold mb-4">My Projects</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div id="projects" className="container mx-auto p-8 bg-gradient-to-r from-blue-900/10 to-transparent rounded-xl">
+            <h1 className="text-5xl font-extrabold mb-12 text-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient">
+                My Projects
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {data.map(project => (
                     <ProjectCard key={project.id} project={project} />
                 ))}
@@ -46,45 +48,71 @@ function Projects() {
 
 function ProjectCard({ project }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImageIndex(prevIndex => (prevIndex + 1) % project.images.length);
-        }, 3000); // Change image every 3 seconds
+            if (!isHovered) {
+                setCurrentImageIndex(prevIndex => (prevIndex + 1) % project.images.length);
+            }
+        }, 3000);
 
-        return () => clearInterval(interval); // Cleanup on component unmount
-    }, [project.images.length]);
+        return () => clearInterval(interval);
+    }, [project.images.length, isHovered]);
 
     return (
-        <div className="border rounded-lg shadow-md overflow-hidden">
-            <div className="p-4">
-                <h2 className="text-xl font-semibold">{project.title}</h2>
-                <p className="text-gray-600">{project.description}</p>
+        <div 
+            className="rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm border border-blue-200/20 
+                     shadow-lg hover:shadow-blue-400/20 transform hover:scale-105 transition-all duration-300"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <div className="p-8">
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transform transition-all duration-300">
+                    {project.title}
+                </h2>
+                <p className="text-gray-300 mb-6 leading-relaxed text-lg font-light tracking-wide hover:text-white transition-colors duration-300">
+                    {project.description}
+                </p>
                 
-                <Link href={project.link} passHref>
-                    <span className="text-blue-500 hover:underline cursor-pointer">View Project</span>
+                <Link 
+                    href={project.link} 
+                    className="inline-block px-8 py-3 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500
+                             text-white rounded-full hover:from-pink-500 hover:via-purple-500 hover:to-blue-400
+                             transition-all duration-500 transform hover:scale-110 font-semibold tracking-wide shadow-lg hover:shadow-purple-500/30"
+                    target="_blank"
+                >
+                    View Project
                 </Link>
             </div>
             
-            <div className="p-4">
+            <div className="relative h-72 w-full">
                 <Image
                     src={project.images[currentImageIndex]}
                     alt={`${project.title} Image ${currentImageIndex + 1}`}
-                    width={400}
-                    height={300}
-                    className="object-cover"
+                    fill
+                    className="object-cover transition-all duration-700 hover:scale-110 filter hover:brightness-110"
                 />
             </div>
-            <div className="mt-2 mb-2">
-                    <h3 className="text-gray-700 font-medium">Tags:</h3>
-                    <div className="flex flex-wrap">
-                        {project.tags.map(tag => (
-                            <span key={tag} className="bg-blue-200 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
+            
+            <div className="p-8">
+                <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+                    Technologies Used
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                    {project.tags.map(tag => (
+                        <span 
+                            key={tag} 
+                            className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-400/10 to-purple-500/10 
+                                     border border-blue-200/30 text-blue-200 text-sm font-medium tracking-wider
+                                     hover:border-blue-400/50 hover:text-blue-100 transition-all duration-300
+                                     transform hover:scale-105 shadow-sm hover:shadow-blue-500/20"
+                        >
+                            {tag}
+                        </span>
+                    ))}
                 </div>
+            </div>
         </div>
     );
 }

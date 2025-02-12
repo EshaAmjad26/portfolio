@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import { MdMessage } from "react-icons/md";
+import { MdMessage, MdEmail, MdPerson } from "react-icons/md";
+
 function ContactMe() {
     const [formData, setFormData] = useState({
         name: '',
@@ -11,7 +12,7 @@ function ContactMe() {
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({
             ...formData,
@@ -19,7 +20,7 @@ function ContactMe() {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Basic validation
@@ -37,56 +38,72 @@ function ContactMe() {
     };
 
     return (
-        <div id="contact" className="container mx-auto p-6 mt-10">
-            <h2 className="text-4xl font-bold text-center mb-6 text-gray-400">Contact Me</h2>
+        <div id="contact" className="container mx-auto p-8 bg-gradient-to-r from-blue-900/10 to-transparent rounded-xl">
+            <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Get In Touch
+            </h2>
             {errorMessage && (
-                <p className="mb-4 text-red-500 text-center">{errorMessage}</p>
+                <div className="mb-6 p-4 bg-red-100/10 border border-red-400 rounded-lg text-red-400 text-center">
+                    {errorMessage}
+                </div>
             )}
             {successMessage && (
-                <p className="mb-4 text-green-500 text-center">{successMessage}</p>
+                <div className="mb-6 p-4 bg-green-100/10 border border-green-400 rounded-lg text-green-400 text-center">
+                    {successMessage}
+                </div>
             )}
-            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+            <form onSubmit={handleSubmit} className="max-w-lg mx-auto backdrop-blur-sm bg-white/5 p-8 rounded-xl border border-blue-200/20 shadow-lg hover:shadow-blue-400/20 transition-all duration-300">
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-semibold text-gray-700" htmlFor="name">Name</label>
+                    <label className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                        <MdPerson className="text-xl" />
+                        Name
+                    </label>
                     <input
                         type="text"
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring text-black focus:ring-blue-200"
+                        className="w-full p-3 bg-white/10 border border-blue-200/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-400 transition-all duration-300"
                         required
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-semibold text-gray-700" htmlFor="email">Email</label>
+                    <label className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                        <MdEmail className="text-xl" />
+                        Email
+                    </label>
                     <input
                         type="email"
                         id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring text-black focus:ring-blue-200"
+                        className="w-full p-3 bg-white/10 border border-blue-200/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-400 transition-all duration-300"
                         required
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-semibold text-gray-700" htmlFor="message">Message</label>
+                    <label className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                        <MdMessage className="text-xl" />
+                        Message
+                    </label>
                     <textarea
                         id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full p-3 border border-gray-300 rounded focus:outline-none text-black focus:ring focus:ring-blue-200"
-                        rows="5"
+                        className="w-full p-3 bg-white/10 border border-blue-200/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-400 transition-all duration-300"
+                        rows={5}
                         required
                     />
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 transition duration-200"
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                    Send Message 
+                    <MdMessage className="text-xl" />
+                    Send Message
                 </button>
             </form>
         </div>
