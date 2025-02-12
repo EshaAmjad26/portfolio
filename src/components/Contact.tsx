@@ -14,27 +14,40 @@ function ContactMe() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
+        setFormData(prevData => ({
+            ...prevData,
             [name]: value,
-        });
+        }));
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Basic validation
-        if (!formData.name || !formData.email || !formData.message) {
-            setErrorMessage("All fields are required.");
-            return;
+        try {
+            // Basic validation
+            if (!formData.name || !formData.email || !formData.message) {
+                setErrorMessage("All fields are required.");
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                setErrorMessage("Please enter a valid email address.");
+                return;
+            }
+
+            // Simulate a successful submission
+            setSuccessMessage("Your message has been sent!");
+            setErrorMessage("");
+
+            // Reset fields
+            setFormData({ name: '', email: '', message: '' });
+            
+        } catch (error) {
+            setErrorMessage("An error occurred. Please try again.");
+            console.error("Form submission error:", error);
         }
-
-        // Simulate a successful submission
-        setSuccessMessage("Your message has been sent!");
-        setErrorMessage("");
-
-        // Reset fields
-        setFormData({ name: '', email: '', message: '' });
     };
 
     return (
@@ -54,7 +67,7 @@ function ContactMe() {
             )}
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto backdrop-blur-sm bg-white/5 p-8 rounded-xl border border-blue-200/20 shadow-lg hover:shadow-blue-400/20 transition-all duration-300">
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                    <label htmlFor="name" className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
                         <MdPerson className="text-xl" />
                         Name
                     </label>
@@ -69,7 +82,7 @@ function ContactMe() {
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                    <label htmlFor="email" className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
                         <MdEmail className="text-xl" />
                         Email
                     </label>
@@ -84,7 +97,7 @@ function ContactMe() {
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                    <label htmlFor="message" className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
                         <MdMessage className="text-xl" />
                         Message
                     </label>
