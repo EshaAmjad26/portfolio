@@ -1,4 +1,3 @@
-
 interface propsTypes {
     title:string;
 }
@@ -9,3 +8,5 @@ const Heading: React.FC<propsTypes> =({title}) =>{
 <p className='border-b-4 inline-block pb-2'>{title}</p></div>
   )
 }
+
+export default Heading;

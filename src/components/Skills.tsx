@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const skills = [
     { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
@@ -23,11 +24,15 @@ function Skills() {
                                  border border-blue-200/20 shadow-lg hover:shadow-blue-400/20 
                                  transform hover:scale-105 transition-all duration-300"
                     >
-                        <img 
-                            src={skill.icon} 
-                            alt={`${skill.name} icon`} 
-                            className="w-20 h-20 mb-4 hover:animate-spin-slow" 
-                        />
+                        <div className="relative w-20 h-20 mb-4">
+                            <Image 
+                                src={skill.icon} 
+                                alt={`${skill.name} icon`} 
+                                fill
+                                className="hover:animate-spin-slow"
+                                unoptimized
+                            />
+                        </div>
                         <h3 className="text-xl font-semibold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                             {skill.name}
                         </h3>
