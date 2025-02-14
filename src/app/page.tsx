@@ -3,6 +3,7 @@ import ContactMe from '@/components/Contact';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import Education from '@/components/Education';
 import React from 'react';
 
 export default function Home() {
@@ -20,11 +21,14 @@ export default function Home() {
         <Skills />
       </section>
 
-      <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
-        <ContactMe />
-      </section>
+    
+   
+      <Education />
       <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
         <About />
+      </section>
+      <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
+        <ContactMe />
       </section>
     </main>
   );

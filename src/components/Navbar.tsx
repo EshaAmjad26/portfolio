@@ -11,7 +11,8 @@ function Navbar() {
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
-    { href: "#contact", label: "Contact" }
+    { href: "#contact", label: "Contact" },
+    { href: "#education", label: "Education" }
   ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
