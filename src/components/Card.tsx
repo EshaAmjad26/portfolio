@@ -27,8 +27,8 @@ export const Card = ({ title, description, link, images, tags }: CardProps) => {
               <Image 
                 src={img} 
                 alt={`Image of ${title} - ${index + 1}`} 
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
                 className="rounded-md"
               />
             </div>
