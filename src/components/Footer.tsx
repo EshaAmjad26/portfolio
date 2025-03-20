@@ -1,22 +1,22 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
     return (
         <footer className="backdrop-blur-sm bg-black/30 text-white py-8 border-t border-blue-200/20">
             <div className="container mx-auto flex flex-col items-center px-4">
                 <div className="flex gap-6 mb-6">
-                    <a href="https://facebook.com/yourusername" className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
-                        <FaFacebookF className="text-2xl" />
-                    </a>
-                    <a href="https://twitter.com/yourusername" className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
-                        <FaTwitter className="text-2xl" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/alisha-kayani-a30889202/" className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
+                    <a href="https://www.linkedin.com/in/alisha-kayani-a30889202/" 
+                       className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
                         <FaLinkedin className="text-2xl" />
                     </a>
-                    <a href="https://github.com/AlishaKK" className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
+                    <a href="https://github.com/AlishaKK" 
+                       className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
                         <FaGithub className="text-2xl" />
+                    </a>
+                    <a href="mailto:alishakayani.ai@gmail.com" 
+                       className="hover:text-blue-400 transform hover:scale-110 transition-all duration-300">
+                        <FaEnvelope className="text-2xl" />
                     </a>
                 </div>
 

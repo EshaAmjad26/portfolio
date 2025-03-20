@@ -36,13 +36,12 @@ export default function Hero() {
               <p className='animate-slideIn bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent hover:from-purple-400 hover:to-pink-400'>
                 Alisha Kayani
               </p>
-              <div className='text-2xl font-light mt-6 bg-gradient-to-r from-pink-500 to-blue-400 bg-clip-text text-transparent'>
-                Full Stack Developer & Creative Coder
+              <div className='text-2xl  font-bold mt-6 bg-gradient-to-r from-pink-500 to-blue-400 bg-clip-text text-transparent'>
+                  AI Engineer | Full stack developer
               </div>
             </div>
             <div className='text-lg text-gray-300 mt-8 max-w-lg animate-fadeIn opacity-80 leading-relaxed backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-blue-200/20 hover:border-blue-400/50 transition-all duration-300'>
-              Passionate about crafting beautiful, responsive and user-friendly web experiences. Specializing in modern frameworks like React and Next.js, with a keen eye for design and performance optimization. Let's build something amazing together.
-            </div>
+            Innovative AI Engineer and Full Stack Developer dedicated to creating intelligent, scalable, and user-centric solutions. With expertise in artificial intelligence and comprehensive development skills, I transform complex challenges into seamless digital experiences. Let's collaborate to bring cutting-edge ideas to life.             </div>
             <a href="#projects">
               <button className='mt-8 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xl rounded-full hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/50'>
                 View My Work
