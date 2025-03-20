@@ -1,7 +1,6 @@
-'use client'
-import React, { useState } from 'react'
+'use client';
+import React, { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import Image from 'next/image';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,6 +19,8 @@ function Navbar() {
   return (
     <nav className='w-full fixed top-0 left-0 right-0 z-50 px-4 py-6'>
       <div className='max-w-[2000px] mx-auto flex justify-between items-center px-8 py-6 backdrop-blur-lg bg-gradient-to-r from-black/40 to-blue-900/30 rounded-2xl shadow-[0_0_15px_rgba(0,0,255,0.2)] border border-blue-200/30 hover:shadow-[0_0_25px_rgba(0,0,255,0.3)] hover:border-blue-300/40 transition-all duration-500'>
+        
+        {/* Logo */}
         <div className='text-5xl font-large transition-all duration-500 tracking-tight transform hover:scale-105'>
           <span className='font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient'>Alisha</span> 
           <span className='font-light bg-gradient-to-r from-pink-200 to-blue-200 bg-clip-text text-transparent'>Kayani</span>
@@ -70,7 +71,7 @@ function Navbar() {
         )}
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
