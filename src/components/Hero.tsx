@@ -35,7 +35,7 @@ export default function Hero() {
           <div className='text-[60px] sm:text-[100px] font-bold leading-tight text-center lg:text-left'>
             <div className='transform hover:scale-105 transition-all duration-500'>
               <p className='animate-fadeIn bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-400'>
-                Hello, I'm
+                Hello, I&apos;m
               </p>
               <p className='animate-slideIn bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent hover:from-purple-400 hover:to-pink-400'>
                 Alisha Kayani
@@ -45,7 +45,7 @@ export default function Hero() {
               </div>
             </div>
             <div className='text-lg text-gray-300 mt-8 max-w-lg animate-fadeIn opacity-80 leading-relaxed backdrop-blur-sm bg-white/5 p-6 rounded-xl border border-blue-200/20 hover:border-blue-400/50 transition-all duration-300'>
-              Innovative AI Engineer and Full Stack Developer dedicated to creating intelligent, scalable, and user-centric solutions. With expertise in artificial intelligence and comprehensive development skills, I transform complex challenges into seamless digital experiences. Let's collaborate to bring cutting-edge ideas to life.
+              Innovative AI Engineer and Full Stack Developer dedicated to creating intelligent, scalable, and user-centric solutions. With expertise in artificial intelligence and comprehensive development skills, I transform complex challenges into seamless digital experiences. Let&apos;s collaborate to bring cutting-edge ideas to life.
             </div>
             <a href="#projects">
               <button className='mt-8 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xl rounded-full hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/50'>
