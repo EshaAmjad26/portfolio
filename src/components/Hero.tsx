@@ -23,7 +23,7 @@ export default function Hero() {
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
             <div className="w-80 h-80 relative rounded-full overflow-hidden">
               <Image
-                src="/alishaKk.jpg" // ✅ Correct: Starts with "/"
+                src="/alishai.jpg" // ✅ Correct: Starts with "/"
                 alt="Alisha"
                 width={320} // ✅ Use fixed width and height
                 height={320}
