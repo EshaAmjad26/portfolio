@@ -8,26 +8,26 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <main className="bg-blue-850 min-h-screen py-10">
-      <section className="container mx-auto p-5">
+    <main className="bg-black min-h-screen">
+      <section className="container mx-auto">
         <Hero />
       </section>
       
-      <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
+      <section className="container mx-auto">
         <Projects />
       </section>
 
-      <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
+      <section className="container mx-auto">
         <Skills />
       </section>
 
-    
-   
       <Education />
-      <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
+      
+      <section className="container mx-auto">
         <About />
       </section>
-      <section className="container mx-auto p-5 mt-10 bg-blue-850 text-white shadow-lg rounded-lg">
+      
+      <section className="container mx-auto">
         <ContactMe />
       </section>
     </main>

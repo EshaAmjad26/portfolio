@@ -51,23 +51,25 @@ function ContactMe() {
     };
 
     return (
-        <div id="contact" className="container mx-auto p-8 bg-gradient-to-r from-blue-900/10 to-transparent rounded-xl">
-            <h2 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Get In Touch
+        <div id="contact" className="container mx-auto p-8 py-20 bg-gradient-to-b from-black to-purple-900/5">
+            <h2 className="text-6xl font-bold text-center mb-16">
+                <span className="text-purple-300/90">
+                    Get In Touch
+                </span>
             </h2>
             {errorMessage && (
-                <div className="mb-6 p-4 bg-red-100/10 border border-red-400 rounded-lg text-red-400 text-center">
+                <div className="mb-6 p-4 border border-red-500/50 bg-red-500/10 text-red-400 text-center max-w-lg mx-auto rounded-lg">
                     {errorMessage}
                 </div>
             )}
             {successMessage && (
-                <div className="mb-6 p-4 bg-green-100/10 border border-green-400 rounded-lg text-green-400 text-center">
+                <div className="mb-6 p-4 border border-green-500/50 bg-green-500/10 text-green-400 text-center max-w-lg mx-auto rounded-lg">
                     {successMessage}
                 </div>
             )}
-            <form onSubmit={handleSubmit} className="max-w-lg mx-auto backdrop-blur-sm bg-white/5 p-8 rounded-xl border border-blue-200/20 shadow-lg hover:shadow-blue-400/20 transition-all duration-300">
+            <form onSubmit={handleSubmit} className="max-w-lg mx-auto border border-purple-500/10 bg-gradient-to-br from-black/60 to-purple-900/10 backdrop-blur-sm p-8 rounded-xl shadow-lg shadow-purple-500/5">
                 <div className="mb-6">
-                    <label htmlFor="name" className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-purple-200/80 flex items-center gap-2">
                         <MdPerson className="text-xl" />
                         Name
                     </label>
@@ -77,12 +79,13 @@ function ContactMe() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full p-3 bg-white/10 border border-blue-200/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-400 transition-all duration-300"
+                        className="w-full p-3 bg-black/60 border border-purple-500/10 focus:outline-none focus:border-purple-400/30 text-white placeholder-gray-500 transition-all duration-300 rounded-lg"
+                        placeholder="Your name"
                         required
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="email" className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-purple-200/80 flex items-center gap-2">
                         <MdEmail className="text-xl" />
                         Email
                     </label>
@@ -92,12 +95,13 @@ function ContactMe() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full p-3 bg-white/10 border border-blue-200/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-400 transition-all duration-300"
+                        className="w-full p-3 bg-black/60 border border-purple-500/10 focus:outline-none focus:border-purple-400/30 text-white placeholder-gray-500 transition-all duration-300 rounded-lg"
+                        placeholder="your.email@example.com"
                         required
                     />
                 </div>
                 <div className="mb-6">
-                    <label htmlFor="message" className="block mb-2 text-sm font-semibold text-blue-400 flex items-center gap-2">
+                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-purple-200/80 flex items-center gap-2">
                         <MdMessage className="text-xl" />
                         Message
                     </label>
@@ -106,14 +110,15 @@ function ContactMe() {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full p-3 bg-white/10 border border-blue-200/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400/50 text-white placeholder-gray-400 transition-all duration-300"
+                        className="w-full p-3 bg-black/60 border border-purple-500/10 focus:outline-none focus:border-purple-400/30 text-white placeholder-gray-500 transition-all duration-300 rounded-lg"
                         rows={5}
+                        placeholder="Your message"
                         required
                     />
                 </div>
                 <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-purple-500/80 to-purple-400/80 text-white font-semibold py-4 px-6 rounded-lg hover:from-purple-500 hover:to-purple-400 transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-purple-500/20"
                 >
                     <MdMessage className="text-xl" />
                     Send Message

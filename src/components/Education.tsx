@@ -1,70 +1,102 @@
-import React from 'react';
+import React from "react";
 
 const Education = () => {
   return (
-    <section id="education" className="py-20 bg-blue-850 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/20"></div>
-      <div className="container mx-auto px-4 relative">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-          Education Journey
+    <section id="education" className="py-20 bg-gradient-to-b from-purple-900/5 to-black relative">
+      <div className="container mx-auto px-4">
+        <h2 className="text-6xl font-bold text-center mb-16">
+          <span className="text-purple-300/90">
+            Education Journey
+          </span>
         </h2>
-        
-        <div className="max-w-4xl mx-auto space-y-12">
-          {/* PIAIC Program */}
-          <div className="bg-gradient-to-br from-blue-900/60 to-blue-800/40 p-8 rounded-2xl shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 border border-blue-600/30 backdrop-blur-lg">
-            <div className="flex justify-between items-start">
+
+        <div className="max-w-4xl mx-auto space-y-8">
+          {/* Bachelor Degree */}
+          <div className="p-8 border border-purple-500/10 bg-gradient-to-br from-black/60 to-purple-900/10 backdrop-blur-sm hover:border-purple-400/20 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300 rounded-xl">
+            <div className="flex justify-between items-start flex-wrap gap-4">
               <div>
-                <h3 className="text-2xl font-bold text-white">Presidential Initiative for Artificial Intelligence & Computing (PIAIC)</h3>
-                <p className="text-xl text-blue-200 mt-2 font-semibold">Artificial Intelligence Program</p>
+                <h3 className="text-2xl font-bold text-white">
+                  Lahore College for Women University (LCWU)
+                </h3>
+                <p className="text-lg text-purple-200/80 mt-2">
+                  Bachelor of Computer Science (BSCS)
+                </p>
               </div>
-              <span className="px-4 py-2 bg-blue-700/30 rounded-full text-blue-200 font-medium">2024 - Present</span>
+
+              <span className="px-4 py-2 border border-purple-500/10 bg-gradient-to-r from-purple-600/15 to-purple-400/15 text-gray-300 font-medium rounded-lg">
+                2021 - 2025
+              </span>
             </div>
-            <div className="mt-6 text-blue-100">
-              <p className="flex items-center space-x-3 group">
-                <span className="text-blue-400 text-lg group-hover:text-blue-300 transition-colors">→</span>
-                <span className="group-hover:text-white transition-colors">Comprehensive training in AI, including machine learning, deep learning, and data science</span>
+
+            <div className="mt-6 text-gray-300 space-y-2">
+              <p className="flex items-start">
+                <span className="text-purple-300/70 mr-3">→</span>
+                <span>
+                  Focused on Artificial Intelligence, Programming & Software
+                  Development
+                </span>
               </p>
-              <p className="flex items-center space-x-3 mt-3 group">
-                <span className="text-blue-400 text-lg group-hover:text-blue-300 transition-colors">→</span>
-                <span className="group-hover:text-white transition-colors">Hands-on projects and real-world applications</span>
+
+              <p className="flex items-start">
+                <span className="text-purple-300/70 mr-3">→</span>
+                <span>
+                  Final Year Project: PyMentorBot (AI-powered learning
+                  assistant)
+                </span>
               </p>
             </div>
           </div>
 
-          {/* Virtual University */}
-          <div className="bg-gradient-to-br from-blue-900/60 to-blue-800/40 p-8 rounded-2xl shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 border border-blue-600/30 backdrop-blur-lg">
-            <div className="flex justify-between items-start">
+          {/* Intermediate */}
+          <div className="p-8 border border-purple-500/10 bg-gradient-to-br from-black/60 to-purple-900/10 backdrop-blur-sm hover:border-purple-400/20 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300 rounded-xl">
+            <div className="flex justify-between items-start flex-wrap gap-4">
               <div>
-                <h3 className="text-2xl font-bold text-white">Virtual University</h3>
-                <p className="text-xl text-blue-200 mt-2 font-semibold">Software Engineering</p>
+                <h3 className="text-2xl font-bold text-white">
+                  Intermediate (ICS)
+                </h3>
+                <p className="text-lg text-purple-200/80 mt-2">
+                  Lahore Board
+                </p>
               </div>
-              <span className="px-4 py-2 bg-blue-700/30 rounded-full text-blue-200 font-medium">2020 - 2024</span>
+
+              <span className="px-4 py-2 border border-purple-500/10 bg-gradient-to-r from-purple-600/15 to-purple-400/15 text-gray-300 font-medium rounded-lg">
+                2019 - 2021
+              </span>
             </div>
-            <div className="mt-6 text-blue-100">
-              <p className="flex items-center space-x-3 group">
-                <span className="text-blue-400 text-lg group-hover:text-blue-300 transition-colors">→</span>
-                <span className="group-hover:text-white transition-colors">Relevant coursework: Computer Science, Data Structures, Algorithms</span>
+
+            <div className="mt-6 text-gray-300">
+              <p className="flex items-start">
+                <span className="text-purple-300/70 mr-3">→</span>
+                <span>
+                  Studied Computer Science, Mathematics & Programming Basics
+                </span>
               </p>
             </div>
           </div>
 
-          {/* Mehran Degree College */}
-          <div className="bg-gradient-to-br from-blue-900/60 to-blue-800/40 p-8 rounded-2xl shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 border border-blue-600/30 backdrop-blur-lg">
-            <div className="flex justify-between items-start">
+          {/* Matric */}
+          <div className="p-8 border border-purple-500/10 bg-gradient-to-br from-black/60 to-purple-900/10 backdrop-blur-sm hover:border-purple-400/20 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300 rounded-xl">
+            <div className="flex justify-between items-start flex-wrap gap-4">
               <div>
-                <h3 className="text-2xl font-bold text-white">Mehran Degree College</h3>
-                <p className="text-xl text-blue-200 mt-2 font-semibold">Pre-Engineering</p>
+                <h3 className="text-2xl font-bold text-white">
+                  Matriculation (Science)
+                </h3>
+                <p className="text-lg text-purple-200/80 mt-2">
+                  Lahore Board
+                </p>
               </div>
-              <span className="px-4 py-2 bg-blue-700/30 rounded-full text-blue-200 font-medium">2018 - 2020</span>
+
+              <span className="px-4 py-2 border border-purple-500/10 bg-gradient-to-r from-purple-600/15 to-purple-400/15 text-gray-300 font-medium rounded-lg">
+                2017 - 2019
+              </span>
             </div>
-            <div className="mt-6 text-blue-100">
-              <p className="flex items-center space-x-3 group">
-                <span className="text-blue-400 text-lg group-hover:text-blue-300 transition-colors">→</span>
-                <span className="group-hover:text-white transition-colors">Chemistry</span>
-              </p>
-              <p className="flex items-center space-x-3 mt-3 group">
-                <span className="text-blue-400 text-lg group-hover:text-blue-300 transition-colors">→</span>
-                <span className="group-hover:text-white transition-colors">Mathematics</span>
+
+            <div className="mt-6 text-gray-300">
+              <p className="flex items-start">
+                <span className="text-purple-300/70 mr-3">→</span>
+                <span>
+                  Science background with strong foundation in Mathematics
+                </span>
               </p>
             </div>
           </div>

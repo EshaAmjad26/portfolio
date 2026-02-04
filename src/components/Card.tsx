@@ -12,34 +12,36 @@ interface CardProps {
 
 export const Card = ({ title, description, link, images, tags }: CardProps) => {
   return (
-    <div className="p-6 border rounded-lg shadow-md bg-white transition-transform hover:scale-105">
-      {/* Title */}
-      <h2 className="text-xl font-bold text-gray-800">{title}</h2>
-
-      {/* Description */}
-      <p className="text-gray-600 mt-2">{description}</p>
-
-      {/* Images (Using next/image for optimization) */}
+    <div className="p-6 border border-purple-500/10 bg-gradient-to-br from-black/60 to-purple-900/10 backdrop-blur-sm transition-all duration-300 hover:border-purple-400/20 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-2 rounded-xl">
+      {/* Images */}
       {images.length > 0 && (
-        <div className="flex gap-2 mt-3">
+        <div className="mb-6">
           {images.map((img, index) => (
-            <div key={index} className="relative w-16 h-16">
+            <div key={index} className="relative w-full h-64 rounded-lg overflow-hidden bg-gradient-to-br from-purple-900/20 to-black/50 flex items-center justify-center border border-purple-500/5">
               <Image 
                 src={img} 
                 alt={`Image of ${title} - ${index + 1}`} 
-                fill
-                style={{ objectFit: "cover" }}
-                className="rounded-md"
+                width={600}
+                height={400}
+                style={{ objectFit: "contain", maxHeight: "100%", maxWidth: "100%" }}
+                className="rounded-lg"
+                unoptimized
               />
             </div>
           ))}
         </div>
       )}
 
+      {/* Title */}
+      <h2 className="text-2xl font-bold text-white mb-3">{title}</h2>
+
+      {/* Description */}
+      <p className="text-gray-300 text-sm mb-6 leading-relaxed">{description}</p>
+
       {/* Tags */}
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mb-6 flex flex-wrap gap-2">
         {tags.map((tag, index) => (
-          <span key={index} className="bg-blue-500 text-white text-sm px-3 py-1 rounded">
+          <span key={index} className="bg-gradient-to-r from-purple-600/20 to-purple-400/20 text-white text-xs px-3 py-1 rounded-full border border-purple-400/15">
             {tag}
           </span>
         ))}
@@ -50,9 +52,10 @@ export const Card = ({ title, description, link, images, tags }: CardProps) => {
         href={link} 
         target="_blank" 
         rel="noopener noreferrer" 
-        className="text-blue-600 hover:underline mt-4 block font-medium"
+        className="text-purple-300 hover:text-purple-200 transition-colors duration-300 font-semibold inline-flex items-center gap-2 group"
       >
         View More
+        <span className="group-hover:translate-x-1 transition-transform">→</span>
       </a>
     </div>
   );
